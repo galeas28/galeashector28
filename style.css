@@ -1,0 +1,165 @@
+/* Poppins fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+/* global variables */
+:root {
+    /* font weight */
+    --font-medium: 500;
+    --font-extrabold: 800;
+
+    /* font size */
+    --text-small: 1rem;
+    --text-medium: 1.8rem;
+    
+
+    /* font family */
+    --font-family: 'Poppins', sans-serif;
+
+    /* colors */
+    --white-color: #fff;
+
+    accent-color: #fafafa;
+}
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    background-image: url('https://wallpapercave.com/wp/wp7529073.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    width: 80%;
+    min-width: 220px;
+    max-width: 400px;
+    font-size: var(--text-small);
+    font-weight: var(--font-medium);
+    padding: 40px 8px;
+    border-radius: 0.55rem;
+    text-align: center;
+    color: var(--white-color);
+    border: 2px solid #fafafa40;
+    backdrop-filter: blur(.5rem);
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+    transform: skew(3deg);
+    transition: transform .3s ease-in-out;
+
+    
+
+    &:hover {
+        transform: skew(0);
+    }
+
+    .login-title {
+        font-size: var(--text-medium);
+        font-weight: var(--font-extrabold);
+        letter-spacing: 1px;
+    }
+
+    /* inputs and login button had the same size */
+    .input-field,
+    .form-button {
+        display: block;
+        width: 80%;
+        font-size: var(--text-small);
+        font-weight: var(--font-medium);
+        padding: 0.5rem 1rem;
+        font-family: var(--font-family);
+        border-radius: 1.2rem;
+        border: none;
+    }
+
+    .input-field {
+        outline: none;
+        background: transparent;
+        border: 2px solid #fafafa40;
+        color: var(--white-color);
+        transition: border .3s;
+
+        &::placeholder {
+            color: var(--white-color);
+        }
+
+        &:hover {
+            border: 2px solid #fafafa10;
+        }
+    }
+
+    .form-button {
+        cursor: pointer;
+        transition: background .3s;
+        background: var(--white-color);
+
+        &:hover {
+            background: #ffffff95;
+        }
+    }
+
+    .form__options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: space-evenly;
+
+        [type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        label {
+            cursor: pointer;
+            transition: opacity .3s;
+            display: flex;
+            align-items: center;
+            gap: .3rem;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+    .form-links {
+        color: #f1f1f1;
+        text-decoration: none;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    .form-links.register {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .form .form__options {
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+
+    }
+}
